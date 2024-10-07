@@ -22,6 +22,51 @@ const Charts = () => {
         ]
     };
 
+    const pieChartData = [
+        {
+            name: "Samsung",
+            marketShare: 21.6, // in percentage
+            color: "rgba(66, 135, 245, 1)",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        },
+        {
+            name: "Apple",
+            marketShare: 17.2, // in percentage
+            color: "#A4C639",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        },
+        {
+            name: "Xiaomi",
+            marketShare: 12.7, // in percentage
+            color: "#FF6F00",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        },
+        {
+            name: "Oppo",
+            marketShare: 10.1, // in percentage
+            color: "#00C853",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        },
+        {
+            name: "Vivo",
+            marketShare: 8.6, // in percentage
+            color: "rgb(123, 31, 162)",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        },
+        {
+            name: "Others",
+            marketShare: 29.8, // in percentage
+            color: "#B0BEC5",
+            legendFontColor: "#7F7F7F",
+            legendFontSize: 15
+        }
+    ]
+
 
     return (
         <ScrollView>
@@ -189,8 +234,8 @@ const Charts = () => {
                         legend: ["HR", "Marketing", "Sales", "IT"],
                         data: [
                             [10, 15, 20, 25],
-                            [12, 14, 18, 22], 
-                            [11, 16, 17, 23], 
+                            [12, 14, 18, 22],
+                            [11, 16, 17, 23],
                         ],
                         barColors: ["#cfc6ca", "#ced6e0", "#a4b0be", "#c4c0c2"]
                     }}
@@ -215,6 +260,34 @@ const Charts = () => {
                         marginVertical: 8,
                         borderRadius: 8
                     }}
+                />
+            </View>
+            <View>
+                <Text style={styles.header}>Pie Chart</Text>
+                <PieChart
+                    data={pieChartData}
+                    width={Dimensions.get("window").width} // from react-native
+                    height={220}
+                    accessor={"marketShare"}
+                    backgroundColor={"transparent"}
+                    paddingLeft={"15"}
+                    center={[10, 10]}
+                    absolute
+                    chartConfig={{
+                        backgroundColor: "#f57fb0",
+                        backgroundGradientFrom: "#ed3481",
+                        backgroundGradientTo: "#a30346",
+                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        // style: {
+                        //     borderRadius: 6,
+                        // },
+                        
+                    }}
+                    // style={{
+                    //     marginVertical: 8,
+                    //     borderRadius: 8
+                    // }}
                 />
             </View>
         </ScrollView>
