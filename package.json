@@ -10,10 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "highcharts": "^11.4.8",
+    "highcharts-react-native": "^1.8.0",
     "react": "18.2.0",
     "react-native": "0.73.0",
     "react-native-chart-kit": "^6.12.0",
-    "react-native-svg": "^15.7.1"
+    "react-native-svg": "^15.7.1",
+    "react-native-table-component": "https://github.com/slice312/react-native-table-component.git",
+    "react-native-webview": "^13.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
